@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:multi_feature/screens/map_screen.dart';
 import '../controller/Themecontroller.dart';
 
 class AppHome extends StatefulWidget {
@@ -74,6 +74,20 @@ class _AppHomeState extends State<AppHome> {
             ),
           ),
         ],
+      ),
+
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Get.to(MapScreen());
+              },
+              child: Text("Go To Google Map"),
+            ),
+          ],
+        ),
       ),
     );
   }
