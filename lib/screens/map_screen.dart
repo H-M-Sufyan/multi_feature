@@ -29,10 +29,20 @@ class MapScreen extends StatelessWidget {
         },
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: controller.showMyLocation,
-        child: const Icon(Icons.my_location),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(
+          left: 20.0,
+          bottom: 20.0
+        ), // move away from zoom buttons
+        child: Align(
+          alignment: Alignment.bottomLeft,
+          child: FloatingActionButton(
+            onPressed: controller.showMyLocation,
+            child: const Icon(Icons.my_location),
+          ),
+        ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

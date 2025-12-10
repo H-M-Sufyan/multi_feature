@@ -26,11 +26,12 @@ class MyApp extends StatelessWidget {
             ? ThemeMode.light
             : ThemeMode.dark,
         darkTheme: ThemeData.dark(),
-        home: Obx(() {
-          return authController.isAuthenticated.value
-              ? AppHome()
-              : LockScreen();
-        }),
+        // home: Obx(() {
+        //   return authController.isAuthenticated.value
+        //       ? AppHome()
+        //       : LockScreen();
+        // }),
+        home: AppHome(),
       );
     });
   }
