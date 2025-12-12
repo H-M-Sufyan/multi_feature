@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:multi_feature/screens/map_screen.dart';
+import 'package:multi_feature/screens/translation.dart';
 import 'package:multi_feature/screens/webview_screen.dart';
 import '../controller/Themecontroller.dart';
 
@@ -93,6 +94,13 @@ class _AppHomeState extends State<AppHome> {
                 Get.to(WebviewScreen());
               },
               child: Text("Go To Web View"),
+            ),
+            SizedBox(height: 15,),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(TanslationScreen());
+              },
+              child: Text("Go To Translation Page"),
             ),
           ],
         ),

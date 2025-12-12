@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:multi_feature/controller/Themecontroller.dart';
 import 'package:multi_feature/controller/auth_controller.dart';
+import 'package:multi_feature/controller/language_controller.dart';
 import 'package:multi_feature/screens/home.dart';
-import 'package:multi_feature/screens/lock_screen.dart';
-import 'package:multi_feature/screens/webview_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +21,9 @@ class MyApp extends StatelessWidget {
     return Obx(() {
       return GetMaterialApp(
         title: 'Multi-Feature',
+        translations: Languages(),
+      locale: Locale('en', 'US'),
+      fallbackLocale: Locale('en', 'US'),
         debugShowCheckedModeBanner: false,
         themeMode: !_themeController.isDark.value
             ? ThemeMode.light
