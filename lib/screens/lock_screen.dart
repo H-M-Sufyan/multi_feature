@@ -2,8 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:multi_feature/controller/auth_controller.dart';
 
-class LockScreen extends StatelessWidget {
+class LockScreen extends StatefulWidget {
+  @override
+  State<LockScreen> createState() => _LockScreenState();
+}
+
+class _LockScreenState extends State<LockScreen> {
   final AuthController authController = Get.find<AuthController>();
+
+  @override
+  void initState() {
+    super.initState();
+    authController.authenticate();
+  }
+
 
   @override
   Widget build(BuildContext context) {

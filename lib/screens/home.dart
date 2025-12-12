@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:multi_feature/screens/map_screen.dart';
+import 'package:multi_feature/screens/webview_screen.dart';
 import '../controller/Themecontroller.dart';
 
 class AppHome extends StatefulWidget {
@@ -85,6 +86,13 @@ class _AppHomeState extends State<AppHome> {
                 Get.to(MapScreen());
               },
               child: Text("Go To Google Map"),
+            ),
+            SizedBox(height: 15,),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(WebviewScreen());
+              },
+              child: Text("Go To Web View"),
             ),
           ],
         ),

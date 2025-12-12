@@ -4,6 +4,7 @@ import 'package:multi_feature/controller/Themecontroller.dart';
 import 'package:multi_feature/controller/auth_controller.dart';
 import 'package:multi_feature/screens/home.dart';
 import 'package:multi_feature/screens/lock_screen.dart';
+import 'package:multi_feature/screens/webview_screen.dart';
 
 void main() {
   runApp(MyApp());
