@@ -4,8 +4,12 @@ import 'package:multi_feature/controller/Themecontroller.dart';
 import 'package:multi_feature/controller/auth_controller.dart';
 import 'package:multi_feature/controller/language_controller.dart';
 import 'package:multi_feature/screens/home.dart';
+import 'package:multi_feature/screens/lock_screen.dart';
+import 'package:multi_feature/services/notification_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotificationService.init(); 
   runApp(MyApp());
 }
 
@@ -29,12 +33,12 @@ class MyApp extends StatelessWidget {
             ? ThemeMode.light
             : ThemeMode.dark,
         darkTheme: ThemeData.dark(),
-        // home: Obx(() {
-        //   return authController.isAuthenticated.value
-        //       ? AppHome()
-        //       : LockScreen();
-        // }),
-        home: AppHome(),
+        home: Obx(() {
+          return authController.isAuthenticated.value
+              ? AppHome()
+              : LockScreen();
+        }),
+        // home: AppHome(),
       );
     });
   }

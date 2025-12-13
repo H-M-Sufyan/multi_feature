@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:multi_feature/screens/map_screen.dart';
 import 'package:multi_feature/screens/translation.dart';
 import 'package:multi_feature/screens/webview_screen.dart';
+import 'package:multi_feature/services/notification_service.dart';
 import '../controller/Themecontroller.dart';
 
 class AppHome extends StatefulWidget {
@@ -16,6 +17,12 @@ class _AppHomeState extends State<AppHome> {
   String ThemeMode = "Light Mode";
 
   final ThemeController _themeController = Get.put(ThemeController());
+
+  @override
+  void initState(){
+    super.initState();
+    NotificationService.showLoginSuccess();
+  }
 
   @override
   Widget build(BuildContext context) {
