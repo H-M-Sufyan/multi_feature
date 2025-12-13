@@ -4,7 +4,6 @@ class NotificationService {
   static final FlutterLocalNotificationsPlugin _plugin =
       FlutterLocalNotificationsPlugin();
 
-  /// Call this ONCE in main.dart
   static Future<void> init() async {
     const AndroidInitializationSettings androidSettings =
         AndroidInitializationSettings('@mipmap/ic_launcher');
@@ -15,7 +14,6 @@ class NotificationService {
     await _plugin.initialize(settings);
   }
 
-  /// Call this AFTER successful fingerprint login
   static Future<void> showLoginSuccess() async {
     const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
